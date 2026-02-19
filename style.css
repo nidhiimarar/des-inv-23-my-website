@@ -1,3 +1,7 @@
 body {
   background-image: url('background.png');
 }
+img {
+    max-width: 100%;
+    height: auto;
+}
