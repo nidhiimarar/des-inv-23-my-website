@@ -2,6 +2,6 @@ body {
   background-image: url('background.png');
 }
 img {
-    max-width: 60%;
+    max-width: 30%;
     height: auto;
 }
