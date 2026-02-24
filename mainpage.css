@@ -1,0 +1,80 @@
+body {
+  background-image: url('portrait_wall.png');
+  cursor: url('hammer.png') 0 32, auto;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.mirror-container {
+    position: relative;
+    display: inline-block;
+}
+
+#camera {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scaleX(-1);
+    z-index: 1;
+}
+
+#mirror-mask {
+    position: relative;
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 90vw;
+    max-height: 90vh;
+    cursor: url('hammer.png') 0 32, pointer;
+    z-index: 10;
+    pointer-events: auto;
+}
+
+#camera-pieces {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.camera-piece {
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none;
+    animation: shatter 0.3s ease-out;
+    border-radius: 0;
+    
+    /* Remove borders if you don't want them */
+    border: none;  /* CHANGED from 3px solid */
+    /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);*/
+    
+    /* Make canvas background transparent */
+    background: transparent;  /* ADD THIS */
+}
+
+.camera-piece canvas {
+    width: 30%;
+    height: 30%;
+    background: transparent;  /* ADD THIS */
+}
+
+@keyframes shatter {
+    from {
+        transform: scale(0) rotate(0deg);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) rotate(360deg);
+        opacity: 1;
+    }
+}

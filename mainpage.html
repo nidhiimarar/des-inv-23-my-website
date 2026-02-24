@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mirror Portrait</title>
+  
+  <link rel="stylesheet" href="mainpage.css">
+</head>
+
+<body>
+  <div class="mirror-container">
+    <!-- Hidden camera video (behind the mirror) -->
+    <video id="camera" autoplay playsinline></video>
+    
+    <!-- Mirror mask overlay -->
+    <img id="mirror-mask" src="mirror1.png">
+    
+    <!-- Container for revealed camera pieces -->
+    <div id="camera-pieces"></div>
+  </div>
+
+  <!-- Audio element for glass shattering -->
+  <audio id="shatter-sound" src="glass-shattering.mp3"></audio>
+  
+  <script src="script.js">
+    // TEST VERSION - inline JavaScript
+    console.log('Inline script started');
+    
+    const mirrorMask = document.getElementById('mirror-mask');
+    console.log('Mirror mask element:', mirrorMask);
+    
+    mirrorMask.addEventListener('click', function(event) {
+      console.log('CLICKED!');
+      alert('Mirror was clicked at: ' + event.clientX + ', ' + event.clientY);
+    });
+    
+    console.log('Click listener added');
+  </script>
+</body>
+</html>
