@@ -1,6 +1,9 @@
 // List of mirror images
 const mirrorImages = [
     'mirror1.png',
+    'mirror3.png',
+    'mirror4.png',
+    'mirror5.png',
     'mirror2.png'
 ];
 
